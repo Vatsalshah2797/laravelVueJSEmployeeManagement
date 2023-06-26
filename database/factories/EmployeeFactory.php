@@ -15,7 +15,7 @@ class EmployeeFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'salary' => fake()->numerify('#####.##'),
+            'salary' => fake()->numerify('#####'),
             'department_id' => Department::pluck('id')->random()
         ];
     }

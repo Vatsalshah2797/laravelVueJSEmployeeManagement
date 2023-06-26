@@ -18,10 +18,12 @@ class DatabaseSeeder extends Seeder
     {
         Department::insert(
             [
-                'name' => 'Open Source',
-            ],
-            [
-                'name' => 'Node',
+                [
+                    'name' => 'Open Source',
+                ],
+                [
+                    'name' => 'Node',
+                ]
             ]
         );
 

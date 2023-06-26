@@ -11,7 +11,20 @@
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-Laravel 9 
+Laravel 9 Vue JS Employee Management Web Application
+
+Steps to be followed
+===============================
+- Clone project code zip file from Repository
+- Run command `Composer install`
+- Run command `npm install`
+- Run command `cp env.example .env`
+- Run command `php artisan generate:key`
+- Create mysql db and Set database credentials in .env file
+- Add VITE_API_URL=http://localhost:8000/api in .env file
+- Run command `php artisan migrate --seed`
+- Run command `php artisan serve`
+- Run command `npm run dev`
 
 php 
 
