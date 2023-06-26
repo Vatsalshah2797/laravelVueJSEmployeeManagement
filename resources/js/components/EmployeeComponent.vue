@@ -7,35 +7,41 @@
                     <div class="card-body">
                         <table class="table table-bordered mt-4">
                             <thead>
-                                <th>Employee</th>
-                                <th>Department</th>
-                                <th>Salary</th>
+                                <tr colspan="3">
+                                    <th width="33%">Employee</th>
+                                    <th width="33%">Department</th>
+                                    <th width="33%">Salary</th>
+                                </tr>
                             </thead>
                             <tbody v-if="employees.length">
                                 <tr v-for="department in employees">
-                                    <td v-if="department['employees'].length > 0">
+                                    <td colspan="3" v-if="department['employees'].length > 0">
                                         <table class="table">
                                             <tbody>
-                                                <tr v-for="(employee,index) in department['employees']" :key="index">
-                                                    <td> {{ employee.name }} </td>
-                                                    <td> {{ department.name }} </td>
-                                                    <td> <input type="text" name="salary" v-model="employee.salary" @change="updateEmployeeSalary(employee.id, employee.salary)" /> </td>
+                                                <tr colspan="3" v-for="(employee,index) in department['employees']" :key="index">
+                                                    <td width="33%"> {{ employee.name }} </td>
+                                                    <td width="33%"> {{ department.name }} </td>
+                                                    <td width="33%"> <input type="text" name="salary" v-model="employee.salary" @change="updateEmployeeSalary(employee.id, employee.salary)" /> </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>Total Salary Of {{ department.name }} Department </td>
-                                                    <td>{{ department.employees_sum_salary }}</td>
+                                                <tr >
+                                                    <td colspan="2"><b>Total Salary Of {{ department.name }} Department </b></td>
+                                                    <td><b>{{ department.employees_sum_salary.toFixed(2) }}</b></td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td> Total Salary Of All Department </td>
-                                    <td>{{ total_department_salary }}</td> 
+                                    <td colspan="2"> <b>Total Salary Of All Department</b> </td>
+                                    <td class="text-success"><b>{{ total_department_salary }}</b></td> 
                                 </tr>
                             </tbody>
                             <tbody v-else>
-                                <tr>No Record Found.</tr>
+                                <tr>
+                                    <td colspan="3" align="center" class="text-danger">
+                                        <b >No Record Found.</b>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -67,7 +73,7 @@
                         }
                     });
                 }
-                return sum;
+                return sum.toFixed(2);
             }
         },
         //Set Value for the department wise employee list :: Read Fetch All Employee List data
