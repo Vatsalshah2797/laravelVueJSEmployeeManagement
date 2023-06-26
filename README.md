@@ -26,33 +26,44 @@ Steps to be followed
 - Run command `php artisan serve`
 - Run command `npm run dev`
 
-php 
 
-composer 
+Used Tech Stack:: php, laravel 9, Vue js  
+
+API::
+
+Note::
+============
+My laravel vuejs application run on port is 8001 if you have anything different then change VITE_API_URL in laravel .env file
+
+API Creation
+
+Endpoint used:: VITE_API_URL=http://localhost:8001/api
+Employee List:http://localhost:8001/api/departments
+Update Employee Salary:http://localhost:8001/api/employee/{id}
+
+Test cases & Validation Rules
+============
+
+1. If there is no record, then No record found is display on Listing.
+2. If department have no employees then salary 0 and not display in a list. 
+3. Added validation rule for Salary amount would be > 0
+4. Condition set for object, array not empty, keys set, object has property
 
 
-Install 
+Make your own project using below steps
+================================
+Install composer
 
-
+Create Laravel Project
 composer create-project laravel/laravel="9.*" laravelVueJsDemo
 
-
-laravel/sail ................................................................................................................................ DONE
-  laravel/sanctum ............................................................................................................................. DONE
-  laravel/tinker .............................................................................................................................. DONE
-  nesbot/carbon ............................................................................................................................... DONE
-  nunomaduro/collision ........................................................................................................................ DONE
-  nunomaduro/termwind ......................................................................................................................... DONE
-  spatie/laravel-ignition ........................................................................
-  
-  
 cd laravelVueJsDemo/
+
+Reference Command::
 
 php artisan serve
 
-
 php artisan make:model Employee -mc --api
-
 
 php artisan make:model Department -m
 
@@ -60,30 +71,17 @@ php artisan make:controller DepartmentController
 
 =============================
 
-Test practical
+Laravel Settings
+======================
 
 - Create one db in mysql and Set db connection in .env file
 - run migration using php artisan migrate command
 - run seeder for add data using php artisan db:seed (P)
 - run php artisan serve
 
-API::
-
-My laravel vuejs application run on port is 8001 if you have anything different then change VITE_API_URL in laravel .env file
-
-API Creation
-
-Endpoint used:: VITE_API_URL=http://localhost:8001/api
-List:http://localhost:8001/api
-Update Employee Salary:
 
 Vue js
-- run npm install and npm run dev
-
-
-=========================================
-Vue Js
-=======================
+==============
 
 composer require laravel/ui
 
@@ -91,26 +89,16 @@ php artisan ui vue
 
 npm install --save axios vue-axios
 
-
 npm install
 
 npm run dev
 
 npm run watch
 
-
-
-
 =====================================
 
 
-Test cases 
-============
 
-1. If there is no record, then No record found is display on Listing.
-2. If department have no employees then salary 0 and not display in a list. 
-3. Added validation rule for Salary amount would be > 0
-4. Condition set object, array not empty, keys set, object has property
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).
